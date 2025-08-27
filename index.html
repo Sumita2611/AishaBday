@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday</title>
+  <style>
+    /* Page Styling */
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(to bottom right, #87ceeb, #b0e0e6, #ffffff);
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Birthday Image */
+    img {
+      width: 250px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+      animation: zoomIn 1.5s ease-in-out;
+      z-index: 2;
+    }
+
+    /* Button Styling */
+    button {
+      padding: 15px 35px;
+      font-size: 22px;
+      font-style: italic;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(45deg, #ff4b2b, #ff416c);
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+      animation: glow 2s infinite alternate;
+      z-index: 2;
+    }
+
+    button:hover {
+      background: linear-gradient(45deg, #ff1e56, #ff5e99);
+      transform: scale(1.1);
+    }
+
+    /* Floating Balloons */
+    .balloon {
+      position: absolute;
+      bottom: -150px;
+      width: 80px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: #ff6b6b;
+      animation: float 6s ease-in-out infinite;
+      box-shadow: inset -5px -5px 10px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    /* Different Balloon Colors */
+    .balloon:nth-child(1) { left: 5%; background-color: #ff6b6b; animation-delay: 0s; }
+    .balloon:nth-child(2) { left: 15%; background-color: #ffb347; animation-delay: 2s; }
+    .balloon:nth-child(3) { left: 85%; background-color: #6bc5ff; animation-delay: 1s; }
+    .balloon:nth-child(4) { left: 75%; background-color: #77dd77; animation-delay: 3s; }
+
+    /* Balloon String */
+    .balloon::after {
+      content: "";
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 30px;
+      background-color: #555;
+    }
+
+    /* Animations */
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-300px) rotate(10deg); }
+      100% { transform: translateY(0) rotate(-10deg); }
+    }
+
+    @keyframes zoomIn {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes glow {
+      0% { box-shadow: 0px 0px 15px #ff4b2b; }
+      100% { box-shadow: 0px 0px 25px #ff416c; }
+    }
+
+    /* Hide Music Player */
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Balloons -->
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+
+  <!-- Birthday Image -->
+  <img src="images/WhatsApp Image 2025-08-24 at 18.57.32_1c4db1df.jpg" alt="Happy Birthday Image">
+
+  <!-- Button -->
+  <button onclick="window.location.href='birthday.html'">🎉 Happy Birthday Didi 🎂</button>
+
+  <!-- Happy Birthday Music -->
+  <audio autoplay loop>
+    <source src="Wish.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+</body>
+</html>
+
+
+
